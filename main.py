@@ -8,7 +8,7 @@ BACKGROUND_COLOR=(0,0,0)
 
 class Apple:
     def __init__(self,parent_screen):
-        self.image=pygame.image.load("resources/apple.jpg").convert()
+        self.image=pygame.image.load("resources/food.gif").convert()
         self.parent_screen=parent_screen
         self.x=120
         self.y=120 #to align snake and apple the apple xoordinates are multiple of size(40)
@@ -37,7 +37,7 @@ class Apple:
 class Snake:
     def __init__(self, parent_screen,length):
         self.parent_screen = parent_screen
-        self.block = pygame.image.load("resources/block.jpg").convert()
+        self.block = pygame.image.load("resources/gif1.gif").convert()
         self.x = [40]*length
         self.y = [40]*length
         self.direction = 'up'
@@ -59,7 +59,12 @@ class Snake:
         # so that drawed blocks don't leave trail behind, they get overwritten by the fill
         # self.parent_screen.fill(BACKGROUND_COLOR)
         for i in range(self.length):
-            self.parent_screen.blit(self.block, (self.x[i], self.y[i]))
+            if i!=0:
+                self.parent_screen.blit(self.block, (self.x[i], self.y[i]))
+            else:
+                block1 = pygame.image.load("resources/loli-2.png").convert()
+                self.parent_screen.blit(block1,(self.x[i], self.y[i]))
+
             pygame.display.flip()  # to update screen
 
 
