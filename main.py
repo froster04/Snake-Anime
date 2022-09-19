@@ -40,7 +40,7 @@ class Snake:
         self.block = pygame.image.load("resources/loli-2.png").convert()
         self.x = [40]*length
         self.y = [40]*length
-        self.direction = 'up'
+        self.direction = 'down'
         self.length=length
 
 
@@ -131,7 +131,7 @@ class Game:
 
 
     def play_background_music(self):
-        pygame.mixer.music.load("resources/usada_bgm.mp3")
+        pygame.mixer.music.load("usada_bgm.mp3")
         pygame.mixer.music.play()
 
 
